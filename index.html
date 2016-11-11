@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+	<head>
+		<link  rel="stylesheet" data-semver="3.3.7" data-require="bootstrap-css@3.3.7" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" />
+		<link data-require="fontawesome@4.5.0" data-semver="4.5.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css" />
+		<script	src="https://code.angularjs.org/1.5.8/angular.js" data-require="angular.js@1.5.8" data-semver="1.5.8"></script>
+		<script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js" data-require="angular.js@1.5.8" data-semver="1.5.8"></script>
+		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.4.8.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" data-semver="3.1.1" data-require="jquery@*"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" data-semver="3.3.7" data-require="bootstrap@3.3.7"></script>
+
+		<link href="css/style.css" rel="stylesheet" />
+		
+	</head>
+	<body ng-app="app">
+		<ng-include src="'menu.html'"></ng-include>
+		<div ng-view></div>
+	
+		<!-- services -->
+		<script src="js/service/wizardService.js"></script>
+		<!-- controllers -->
+		<script src="js/controller/wizardcontroller.js"></script>
+		<script src="js/controller/listRegistersController.js"></script>
+		<!-- main -->
+		<script src="js/script.js"></script>
+		<script src="js/commons.js"></script>
+	</body>
+</html>

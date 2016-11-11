@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		
+		<div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading"><h3>My Apps</h3></div>
+
+		  <!-- Table -->
+		  <table class="table table-striped">
+				<tr>
+					<th>Name</th>
+					<th class="center">Purpose</th>
+					<th class="center">Enviroment</th>
+					<th class="center">EC2 Servers</th>
+					<th class="center"></th>
+				</tr>
+				<tr ng-repeat='item in list '>
+					<td style="width: 20%">{{item.name}}</td>
+					<td class="center" style="width: 20%">{{item.purpose}}</td>
+					<td class="center" style="width: 20%">{{item.selEnviroment}}</td>
+					<td class="center" style="width: 20%">{{item.size}}</td>
+					<td class="center" style="width: 20%"><a href="#/home/{{item.Id}}"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a> </td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+</div>

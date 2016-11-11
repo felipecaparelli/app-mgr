@@ -1,0 +1,48 @@
+.center {
+	text-align: center;
+}
+
+.navbar {
+    border-radius: 0 !important;
+}
+
+#wizard-step-container {
+  margin: 20px 0;
+}
+
+#wizard-content-container {
+  margin: 20px 0;
+}
+
+#wizard-navigation-container {
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+  padding-top: 20px;
+}
+
+.help-block {
+	font: 10px "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+	color: #444;
+}
+
+.gridStyle {
+	border: 1px solid rgb(212, 212, 212);
+	width: 400px;
+	height: 300px
+}
+
+table, th, td {
+	/*border: 1px solid grey;
+	border-collapse: collapse;
+	padding: 5px;*/
+}
+
+table tr:nth-child(odd) {
+	background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+	background-color: #ffffff;
+}
+
+

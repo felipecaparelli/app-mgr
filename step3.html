@@ -1,0 +1,217 @@
+<div class="row">
+	<h2>EC2 Servers Information</h2>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div>
+
+
+				<h4 class="panel-title">
+
+					<button data-toggle="collapse" data-target="#collapse1">
+						<img alt="" style="width: 30px; height: 30px"
+							src="images/icon-plus-minus.png" id="collapseimage"
+							onclick="javascript:changeImage()">
+
+					</button>
+				</h4>
+
+
+			</div>
+		</div>
+
+		<div id="collapse1" class="panel-collapse collapse">
+
+			<div class="panel-body">
+
+				<div class="row">
+
+
+					<div class="col-xs-3">
+						<label for="ec2type">Type </label> <select
+							class="form-control  input-sm" id="ec2type"
+							ng-model="vm.appform.ec2.type" required>
+							<option value="">Select...</option>
+							<option value="Instance">Instance</option>
+							<option value="ASG">ASG</option>
+						</select>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-xs-3">
+						<label for="ec2purpose">Purpose </label> <input type="text"
+							class="form-control  input-sm" id="ec2purpose"
+							ng-model="vm.appform.ec2.purpose" placeholder="Purpose" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-3">
+						<label for="ec2enviroments">Enviroments *</label> <select
+							class="form-control  input-sm" id="ec2enviroments"
+							ng-model="vm.appform.ec2.enviroments" required>
+							<option value="">Select...</option>
+							<option value="Both">Both</option>
+							<option value="PRD">PRD</option>
+							<option value="M-F:8-8">DTA</option>
+						</select>
+					</div>
+
+					<div class="col-xs-3">
+						<label for="ec2operatingsystem">Operating System *</label> <select
+							class="form-control  input-sm" id="ec2operatingsystem"
+							ng-model="vm.appform.ec2.operatingsystem" required>
+							<option value="">Select...</option>
+							<option value="Windows 2012 R2">Windows 2012 R2</option>
+							<option value="Linux">Linux</option>
+						</select>
+					</div>
+
+					<div class="col-xs-3">
+						<label for="ec2databaseincluded">Database included</label> <select
+							class="form-control  input-sm" id="ec2databaseincluded"
+							ng-model="vm.appform.ec2.databaseincluded" required>
+							<option value="">Select...</option>
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select>
+					</div>
+
+
+
+				</div>
+
+
+				<div class="row">
+
+
+					<div class="col-xs-3">
+						<label for="ec2memory">Memory GB </label> <input type="text"
+							class="form-control  input-sm" id="ec2memory"
+							ng-model="vm.appform.ec2.Memory" placeholder="Memory GB" required>
+					</div>
+
+					<div class="col-xs-3">
+						<label for="ec2vCPU">vCPU </label> <input type="text"
+							class="form-control  input-sm" id="ec2vCPU"
+							ng-model="vm.appform.ec2.vcpu" placeholder="vCPU" required>
+					</div>
+
+
+
+
+				</div>
+
+
+				<div class="row">
+
+
+					<div class="col-xs-3">
+						<label for="ec2bootvolume">Boot volume capacity </label> <input
+							type="text" class="form-control  input-sm" id="ec2bootvolume"
+							ng-model="vm.appform.ec2.bootvolume"
+							placeholder="Boot volume capacity" required>
+					</div>
+
+				</div>
+				<div class="row">
+
+
+					<div class="col-xs-3">
+						<label for="additionalvolume1">Additional volume1 capacity
+						</label> <input type="text" class="form-control  input-sm"
+							id="additionalvolume1"
+							ng-model="vm.appform.ec2.additionalvolume1"
+							placeholder="Additional volume1 capacity" required>
+					</div>
+
+
+					<div class="col-xs-3">
+						<label for="additionalvolume2">Additional volume2 capacity
+						</label> <input type="text" class="form-control  input-sm"
+							id="additionalvolume2"
+							ng-model="vm.appform.ec2.additionalvolume2"
+							placeholder="Additional volume2 capacity" required>
+					</div>
+
+
+					<div class="col-xs-3">
+						<label for="additionalvolume3">Additional volume3 capacity
+						</label> <input type="text" class="form-control  input-sm"
+							id="additionalvolume3"
+							ng-model="vm.appform.ec2.additionalvolume3"
+							placeholder="Additional volume3 capacity" required>
+					</div>
+
+
+					<div class="col-xs-3">
+						<label for="additionalvolume4">Additional volume4 capacity
+						</label> <input type="text" class="form-control  input-sm"
+							id="additionalvolume4"
+							ng-model="vm.appform.ec2.additionalvolume4"
+							placeholder="Additional volume4 capacity" required>
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+
+
+
+			<div class="panel-footer">
+
+				<button type="button" class="btn btn-success"
+					ng-click="vm.createec2server()">+ add new EC2 server</button>
+
+			</div>
+
+		</div>
+
+
+
+
+	</div>
+
+
+
+
+
+	<div class="panel panel-default">
+
+		<div class="panel-body">
+
+			<div class="table-responsive">
+
+				<table style="width: 99%">
+					<tr>
+						<th style="width: 25%" ng-repeat='key in vm.appform.ec2keys'>{{key}}</th>
+					</tr>
+					<tr ng-repeat='ec2 in vm.appform.ec2list'>
+						<td style="width: 25%">{{ec2.Type}}</td>
+						<td style="width: 25%">{{ec2.Enviroments}}</td>
+						<td style="width: 25%">{{ec2.OperatingSystem}}</td>
+						<td style="width: 25%"><button type="button"
+								class="btn btn-danger" ng-click="vm.createec2server()">Delete</button></td>
+					</tr>
+				</table>
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+
+
+
+</div>
+
+
+
+
